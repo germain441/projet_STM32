@@ -17,14 +17,23 @@ int lire_bouton(void){
     digitalRead(GPIOA,  0, &value);
     value = (value & 0x0001);
 
-    if((etat_precedent != value) && value){
+    if(value == 1){
         res = 1;
+    }
+    else
+        res =0;
+
+/*
+    if((etat_precedent != value) && value){
+      res = 1;
     }
     
     else{
         res = 0;
         
     }
+
+    etat_precedent = value;*/
 
     return res;
 }
