@@ -3,6 +3,8 @@
 #include "bouton.h"
 #include "led.h"
 
+int8_t debut_appui = 0;
+
 
 int lire_bouton(void){
    
@@ -23,9 +25,6 @@ int lire_bouton(void){
         res = 0;
         
     }
-
-    if(1 && (etat_precedent != value)) for(i = 0; i<1000000; i++);
-    etat_precedent = value;
 
     return res;
 }
